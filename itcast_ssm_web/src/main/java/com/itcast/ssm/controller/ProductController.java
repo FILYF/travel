@@ -18,16 +18,15 @@ public class ProductController {
     @RequestMapping("/findAll.do")
     public ModelAndView findAll() throws Exception {
         ModelAndView mv = new ModelAndView();
-        System.out.println("表现层执行了。。");
         List<Product> products = productService.findAll();
-        for (Product product:products) {
-            System.out.println(product.getDepartureTime());
-            System.out.println(product.getDepartureTimeStr());
-            System.out.println(product.getProductStatus());
-            System.out.println(product.getProductStatusStr());
-        }
         mv.addObject("productList",products);
         mv.setViewName("product-list");
         return mv;
+    }
+
+    @RequestMapping("/save.do")
+    public String save(Product product){
+        productService.save(product);
+        return "forward:findAll.do";
     }
 }
