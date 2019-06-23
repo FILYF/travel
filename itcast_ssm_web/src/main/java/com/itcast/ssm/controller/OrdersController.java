@@ -28,7 +28,7 @@ public class OrdersController {
         return mv;
     }
 
-    @RequestMapping("/findById")
+    @RequestMapping("/findById.do")
     public ModelAndView findById(String id) throws Exception {
         ModelAndView mv = new ModelAndView();
         Orders orders = ordersService.findById(id);

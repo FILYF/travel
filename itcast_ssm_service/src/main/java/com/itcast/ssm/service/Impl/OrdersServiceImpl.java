@@ -6,9 +6,11 @@ import com.itcast.ssm.service.IOrdersService;
 import com.itcst.ssm.domain.Orders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 @Service
+@Transactional
 public class OrdersServiceImpl implements IOrdersService {
     @Autowired
     private IOrdersDao ordersDao;

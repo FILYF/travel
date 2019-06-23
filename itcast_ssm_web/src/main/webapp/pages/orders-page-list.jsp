@@ -465,9 +465,6 @@
 <script
         src="${pageContext.request.contextPath}/plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 <script>
-    $(function () {
-        var options = document
-    })
     function changePageSize() {
         //获取下拉框的值
         var pageSize = $("#changePageSize").val();
