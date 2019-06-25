@@ -21,6 +21,6 @@ public interface IPermissionDao {
     @Select("select * from permission where id = #{id}")
     Permission findById(String id) throws Exception;
 
-    @Delete("delete * from permission where id = #{id}")
+    @Delete("delete from permission where id = #{id}")
     void deletePermission(String id) throws Exception;
 }

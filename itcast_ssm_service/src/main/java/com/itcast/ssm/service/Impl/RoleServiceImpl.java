@@ -2,6 +2,7 @@ package com.itcast.ssm.service.Impl;
 
 import com.itcast.ssm.dao.IRoleDao;
 import com.itcast.ssm.service.IRoleService;
+import com.itcst.ssm.domain.Permission;
 import com.itcst.ssm.domain.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,17 @@ public class RoleServiceImpl implements IRoleService {
     @Override
     public Role findById(String id) throws Exception {
         return roleDao.findById(id);
+    }
+
+    @Override
+    public List<Permission> findOtherPermissions(String roleId) throws Exception {
+        return roleDao.findOtherPermissions(roleId);
+    }
+
+    @Override
+    public void addPermissionToRole(String roleId, String[] permissionIds) throws Exception {
+        for (String permissionId :permissionIds) {
+            roleDao.addPermissionToRole(roleId,permissionId);
+        }
     }
 }
